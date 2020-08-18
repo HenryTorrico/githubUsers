@@ -3,6 +3,8 @@ import { UserModel } from '../../core/domain/user.model';
 import { GetAllUsersUseCase } from '../../core/usecases/getAllUsers';
 import { Router } from '@angular/router';
 import { RestService } from '../../services/rest.service';
+import { Card } from "../../base/card.blueprint";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @Component({
   selector: 'app-user-card',
@@ -12,6 +14,7 @@ import { RestService } from '../../services/rest.service';
 
 export class UserListComponent implements OnInit {
   page = 1;
+  horizontal = true;
   pageSize = 4;
   title = 'GithubUsers';
   users: any[] = [];

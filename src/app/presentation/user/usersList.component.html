@@ -1,35 +1,37 @@
-<div *ngFor="let user of users | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
-  <div class="col-md-4">
-    <!--Card-->
-    <mdb-card cascade="true" narrower="true">
-      <!--Card image-->
-      <div class="view view-cascade overlay waves-light" mdbWavesEffect>
-        <mdb-card-img style="width: 300;height: 300;" src={{user.avatar_url}}></mdb-card-img>
-        <a>
-          <div class="mask rgba-white-slight">{{user.avatar_url}}</div>
-        </a>
-      </div>
-      <!--/Card image-->
+  <h1>
+    <div class="center">
 
-      <mdb-card-body cascade="true" class="text-center">
-    
-        <h5 class="black-text"> Username: 
-          {{user.login}}</h5>
-        <!--Title-->
-        <h4 class="card-title"><a>Profile: {{user.html_url}}</a></h4>
-        <!--Text-->
+    GITHUBUSERS
+  </div>
 
-        
+  </h1>
+<div class="row">
+  <div *ngFor="let user of users | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize" class="sample-column card-wrapper">
+      <igx-card class="col-md-16" [horizontal]="horizontal">
+          <div igxLayout igxLayoutDir="column" igxFlex igxFlexGrow="1">
+              <igx-card-header>
+                  <h5 igxCardHeaderTitle>Username: {{user.login}}</h5>
+              </igx-card-header>
 
-        <h4 class="card-title"><a>Repository: {{user.repos_url}}</a></h4>
+              <igx-card-content>
+                  <p>My profile: {{user.html_url}}</p>
+              </igx-card-content>
 
+              <igx-card-actions [vertical]="false">
+                  <button  igxButton="flat" igxRipple>
+                    These are my repositories: {{user.repos_url}}
+                  </button>
+              </igx-card-actions>
+          </div>
 
-      </mdb-card-body>
-      <!--/.Card content-->
-
-    </mdb-card>
-    
-    <!--/.Card-->
+          <igx-card-media width="96px">
+              <img src={{user.avatar_url}}>
+          </igx-card-media>
+      </igx-card>
   </div>
 </div>
-<ngb-pagination [collectionSize]="120" [(page)]="page" [maxSize]="6" [boundaryLinks]="true"></ngb-pagination>
+<div style="align-content: center;">
+  <ngb-pagination [collectionSize]="120" [(page)]="page" [maxSize]="6" [boundaryLinks]="true"></ngb-pagination>
+</div>
+
+

@@ -9,7 +9,8 @@ import {RestService} from './services/rest.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { IgxAvatarModule,IgxButtonModule,IgxCardModule,IgxRippleModule} from "igniteui-angular";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,12 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     AppRoutingModule,
     NgbPaginationModule,
     NgbAlertModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+		IgxAvatarModule,
+		IgxButtonModule,
+		IgxCardModule,
+    IgxRippleModule,
+    BrowserAnimationsModule
   ],
   providers: [RestService],
   bootstrap: [AppComponent]
