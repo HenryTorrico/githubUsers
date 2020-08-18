@@ -1,0 +1,35 @@
+<div *ngFor="let user of users | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+  <div class="col-md-4">
+    <!--Card-->
+    <mdb-card cascade="true" narrower="true">
+      <!--Card image-->
+      <div class="view view-cascade overlay waves-light" mdbWavesEffect>
+        <mdb-card-img style="width: 300;height: 300;" src={{user.avatar_url}}></mdb-card-img>
+        <a>
+          <div class="mask rgba-white-slight">{{user.avatar_url}}</div>
+        </a>
+      </div>
+      <!--/Card image-->
+
+      <mdb-card-body cascade="true" class="text-center">
+    
+        <h5 class="black-text"> Username: 
+          {{user.login}}</h5>
+        <!--Title-->
+        <h4 class="card-title"><a>Profile: {{user.html_url}}</a></h4>
+        <!--Text-->
+
+        
+
+        <h4 class="card-title"><a>Repository: {{user.repos_url}}</a></h4>
+
+
+      </mdb-card-body>
+      <!--/.Card content-->
+
+    </mdb-card>
+    
+    <!--/.Card-->
+  </div>
+</div>
+<ngb-pagination [collectionSize]="120" [(page)]="page" [maxSize]="6" [boundaryLinks]="true"></ngb-pagination>
