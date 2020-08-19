@@ -2,9 +2,10 @@ import { Component,OnInit } from '@angular/core';
 import { UserModel } from '../../core/domain/user.model';
 import { GetAllUsersUseCase } from '../../core/usecases/getAllUsers';
 import { Router } from '@angular/router';
-import { RestService } from '../../services/rest.service';
+import { UserService } from '../../services/user.service';
 import { Card } from "../../base/card.blueprint";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { Route } from '@angular/compiler/src/core';
 
 @Component({
   selector: 'app-user-card',
@@ -13,17 +14,19 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 })
 
 export class UserListComponent implements OnInit {
+  _router:Route;
   page = 1;
   horizontal = true;
   pageSize = 4;
   title = 'GithubUsers';
   users: any[] = [];
-  constructor(
-    protected restService: RestService
-  ) {
+  constructor(protected userService: UserService) {}
+  routeWithData(username){
+    this._router.loadChildren(['UserReposComponent', {username:username}]);
   }
+  
   ngOnInit() {
-    this.restService.getUsers()
+    this.userService.getUsers()
     .subscribe(
       (data) => { // Success
         this.users = data as string [];

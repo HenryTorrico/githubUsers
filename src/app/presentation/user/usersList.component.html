@@ -16,9 +16,8 @@
               <igx-card-content>
                   <p>My profile: {{user.html_url}}</p>
               </igx-card-content>
-
               <igx-card-actions [vertical]="false">
-                  <button  igxButton="flat" igxRipple>
+                  <button click="routeWithData(user.login)"  igxButton="flat" igxRipple>
                     These are my repositories: {{user.repos_url}}
                   </button>
               </igx-card-actions>

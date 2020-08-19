@@ -5,7 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import {UserListComponent} from './presentation/user/usersList.component';
-import {RestService} from './services/rest.service';
+import {UserReposComponent} from './presentation/user/userRepos.component';
+import {RepoService} from './services/repo.service';
+
+import {UserService} from './services/user.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
@@ -15,7 +18,8 @@ import { IgxAvatarModule,IgxButtonModule,IgxCardModule,IgxRippleModule} from "ig
 @NgModule({
   declarations: [
     AppComponent,
-    UserListComponent
+    UserListComponent,
+    UserReposComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +35,7 @@ import { IgxAvatarModule,IgxButtonModule,IgxCardModule,IgxRippleModule} from "ig
     IgxRippleModule,
     BrowserAnimationsModule
   ],
-  providers: [RestService],
+  providers: [UserService,RepoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
