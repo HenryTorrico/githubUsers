@@ -8,7 +8,7 @@ Bootstrap 4 is used too.
 
 ##Installing components
 
-Run these components on cmd:
+Run this command on cmd:
 np install
 
 
