@@ -9,10 +9,10 @@ import {UserReposComponent} from './presentation/user/Components/userRepos.compo
 import {RepoService} from './services/repo.service';
 
 import {UserService} from './services/user.service';
-import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { IgxAvatarModule,IgxButtonModule,IgxCardModule,IgxRippleModule} from "igniteui-angular";
+import { IgxCardModule} from "igniteui-angular";
 
 @NgModule({
   declarations: [
@@ -26,12 +26,8 @@ import { IgxAvatarModule,IgxButtonModule,IgxCardModule,IgxRippleModule} from "ig
     HttpClientModule,
     AppRoutingModule,
     NgbPaginationModule,
-    NgbAlertModule,
     MDBBootstrapModule.forRoot(),
-		IgxAvatarModule,
-		IgxButtonModule,
 		IgxCardModule,
-    IgxRippleModule,
     BrowserAnimationsModule
   ],
   providers: [UserService,RepoService],
