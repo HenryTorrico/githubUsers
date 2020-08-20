@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import {API_ENDPOINT} from '../global';
 
 @Injectable({
@@ -9,7 +9,10 @@ export class RepoService {
 
   constructor(protected http: HttpClient) { }
 
-  getRepositories(username) {
-    return this.http.get(API_ENDPOINT+'users/'+username+'/repos');
+  getRepositories(userId) {
+    return this.http.get(API_ENDPOINT+'users/'+userId+'/repos');
+  }
+  getUser(userId){
+    return this.http.get(API_ENDPOINT+'users/'+userId);
   }
 }

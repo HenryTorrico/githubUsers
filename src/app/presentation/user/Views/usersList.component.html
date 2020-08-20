@@ -1,10 +1,4 @@
-  <h1>
-    <div class="center">
 
-    GITHUBUSERS
-  </div>
-
-  </h1>
 <div class="row">
   <div *ngFor="let user of users | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize" class="sample-column card-wrapper">
       <igx-card class="col-md-16" [horizontal]="horizontal">
@@ -17,7 +11,7 @@
                   <p>My profile: {{user.html_url}}</p>
               </igx-card-content>
               <igx-card-actions [vertical]="false">
-                  <button click="routeWithData(user.login)"  igxButton="flat" igxRipple>
+                  <button (click)="routeWithData(user.id)"  igxButton="flat" igxRipple>
                     These are my repositories: {{user.repos_url}}
                   </button>
               </igx-card-actions>
@@ -28,9 +22,12 @@
           </igx-card-media>
       </igx-card>
   </div>
+
 </div>
-<div style="align-content: center;">
-  <ngb-pagination [collectionSize]="120" [(page)]="page" [maxSize]="6" [boundaryLinks]="true"></ngb-pagination>
+<div class="row">
+    <ngb-pagination [collectionSize]="80" [(page)]="page" [maxSize]="6" [boundaryLinks]="true"></ngb-pagination>
+
 </div>
+
 
 

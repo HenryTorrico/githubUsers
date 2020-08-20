@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {UserModel} from '../app/core/domain/user.model';
 
-import {UserListComponent} from './presentation/user/usersList.component';
-import { UserReposComponent } from './presentation/user/userRepos.component';
+import {UserListComponent} from './presentation//user/Components/usersList.component';
+import { UserReposComponent } from './presentation/user/Components/userRepos.component';
 
 const routes: Routes = [
   {
@@ -15,7 +15,7 @@ const routes: Routes = [
     data: { title: 'User List' }
   },
   {
-    path: 'user/repo/:username', 
+    path: 'userRepos/:id', 
     component: UserReposComponent,
     data: { title: 'User Repos' }
   }

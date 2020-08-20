@@ -1,0 +1,26 @@
+<div class="">
+    <div *ngFor="let repo of repositories | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize" class="sample-column card-wrapper">
+        <div class="col-md-16" >
+            <mdb-card style="width: 20rem">
+                <mdb-card-body>
+                <mdb-card-title>
+                    <h5 class="font-weight-bold mb-3">Name: {{repo.name}}</h5>
+                </mdb-card-title>
+                <mdb-card-text class="mb-0">Description: {{repo.description}}</mdb-card-text>
+                </mdb-card-body>
+                <ul class="list-group list-group-flush">
+                <li class="list-group-item">Issues: {{repo.open_issues}}</li>
+                <li class="list-group-item">Open Issues: {{repo.open_issues_count}}</li>
+                <li class="list-group-item">Forks: {{repo.forks_count}}</li>
+                </ul>
+                <mdb-card-body>
+                <a href="{{repo.html_url}}" class="card-link">Link: {{repo.html_url}}</a>
+                </mdb-card-body>
+            </mdb-card>
+        </div>
+    </div>
+</div>
+<ngb-pagination [collectionSize]="120" [(page)]="page" [maxSize]="6" [boundaryLinks]="true"></ngb-pagination>
+
+
+

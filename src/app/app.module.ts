@@ -4,8 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import {UserListComponent} from './presentation/user/usersList.component';
-import {UserReposComponent} from './presentation/user/userRepos.component';
+import {UserListComponent} from './presentation/user/Components/usersList.component';
+import {UserReposComponent} from './presentation/user/Components/userRepos.component';
 import {RepoService} from './services/repo.service';
 
 import {UserService} from './services/user.service';
