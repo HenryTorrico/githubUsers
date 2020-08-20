@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {UserModel} from '../app/core/domain/user.model';
 
 import {UserListComponent} from './presentation//user/Components/usersList.component';
 import { UserReposComponent } from './presentation/user/Components/userRepos.component';

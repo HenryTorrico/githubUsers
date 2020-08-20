@@ -29,10 +29,9 @@ export class CachedService {
         return of(cachedItem.data);
       }
     }
-
     return this.http.get<T>(url).pipe(
       map(data => {
-        if (cacheTime) { // if we actually want to cache the result
+        if (cacheTime) {
           if (cachedItem == undefined) {
             cachedItem = new CacheItem();
             cachedItem.url = url;

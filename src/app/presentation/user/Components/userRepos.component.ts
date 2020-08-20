@@ -1,4 +1,4 @@
-import { Component,OnInit,Input, SystemJsNgModuleLoader } from '@angular/core';
+import { Component,OnInit,Input } from '@angular/core';
 import { RepoService } from 'src/app/services/repo.service';
 import { UserModel } from 'src/app/core/domain/user.model';
 import { ActivatedRoute } from '@angular/router';
@@ -19,11 +19,8 @@ loadComponent = true;
   pageSize = 4;
   title = 'GithubUsers';
   repositories: any[] = [];
-  constructor(protected reposService: RepoService,private route:  ActivatedRoute) {
-    
-  }
-  ngOnInit() {
-    
+  constructor(protected reposService: RepoService,private route:  ActivatedRoute) { }
+  ngOnInit() { 
     this.route.paramMap.subscribe(params => {
       this.userId =Number(params.get("id"))
     });
@@ -36,6 +33,5 @@ loadComponent = true;
         console.error(error);
       }
     );
-  
   }
 }
