@@ -3,6 +3,14 @@
 # GithubUsers
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
+Bootstrap 4 is used too.
+
+
+##Installing components
+
+Run these components on cmd:
+np install
+
 
 ## Development server
 
